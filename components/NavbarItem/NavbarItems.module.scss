@@ -1,81 +1,67 @@
 @import '../variables';
 
-.Menu {
-  .navbarElem {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.3rem;
+.navItem {
+  position: relative;
+  margin-bottom: 2rem;
+
+  .navItemTitle {
     position: relative;
-    height: 100%;
-    border-bottom: 2px solid transparent;
-    padding: 15px 0px 15px 0px;
-    transition: background-color 0.2s;
-    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #333;
+    display: inline-block;
+    cursor: pointer;
+    padding: 0.25rem 0;
+
+    .underline {
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      height: 2px;
+      background-color: #333;
+    }
+  }
+
+  .subItems {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .subItemTitle {
+    position: relative;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    color: #666;
+    display: inline-block;
+    cursor: pointer;
+    padding: 0.15rem 0;
+
+    .underline {
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      height: 1px;
+      background-color: #666;
+    }
 
     &:hover {
-      // top: 5px;
-      background-color: rgba(255, 255, 255, 0.151);
-    }
-
-    .title {
-      padding: 0 25px 0 25px;
+      color: #333;
     }
   }
 
-  .dropDown {
-    margin-top: 18px;
-    position: absolute;
-    width: 200px;
-    font-size: 1rem;
-    transition: background-color 0.2s;
-    background-color: rgba(0, 0, 0, 0.7);
+  @media (max-width: 768px) {
+    margin-bottom: 1.5rem;
 
-    backdrop-filter: blur(11px);
-    // opacity: 0;
-    transition: clip-path 0.6s;
-
-    .subMenu {
-      padding: 0.7rem 1rem;
-      border-top: 2px solid rgba(255, 255, 255, 0.151);
-
-      &:hover {
-        // top: 5px;
-        background-color: rgba(255, 255, 255, 0.151);
-      }
+    .navItemTitle {
+      font-size: 1.6rem;
     }
-  }
 
-  @media (max-width: 1000px) {
-    .navbarElem {
-      font-size: 1.2rem;
+    .subItemTitle {
+      font-size: 1rem;
     }
-    .dropDown {
-      background-color: rgba(0, 0, 0, 0.35);
-    }
-  }
-
-  @media (max-width: 780px) {
-    .navbarElem {
-      font-size: 1.2rem;
-      height: 100%;
-      width: 200px;
-      background-color: rgba(0, 0, 0, 0);
-      &:hover {
-        // top: 5px;
-        background-color: rgba(0, 0, 0, 0);
-      }
-    }
-    .subMenu {
-      margin-top: 0px;
-      padding: 10px 0px 0px 10px;
-      font-size: 1.1rem;
-      position: relative;
-      text-align: center;
-    }
-  }
-}
-
-@media (max-width: 780px) {
-  .Menu:last-child {
-    margin-bottom: 10vh;
   }
 }

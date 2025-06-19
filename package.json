@@ -17,24 +17,28 @@
     "url": ""
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
     "pre-commit": "^1.2.2",
-    "prettier": "^2.1.1"
+    "prettier": "^2.1.1",
+    "tailwindcss": "^3.4.17"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-brands-svg-icons": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@tanstack/react-router": "^1.18.4",
     "emailjs-com": "^3.2.0",
     "file-saver": "^2.0.5",
+    "framer-motion": "^12.18.1",
     "markdown-to-jsx": "^7.1.7",
-    "next": "^13.5.6",
+    "next": "^13.5.11",
     "raw-loader": "^4.0.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-responsive-carousel": "^3.2.23",
-    "sass": "^1.56.1",
-    "@tanstack/react-router": "^1.18.4"
+    "sass": "^1.56.1"
   },
   "browserslist": {
     "production": [

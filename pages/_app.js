@@ -1,11 +1,12 @@
 import '../styles/globals.scss';
-// import Navbar from '../components/Navbar/Navbar';
+import Navbar from '../components/Navbar/Navbar';
+// import TailwindNavbar from '../components/TailwindNavbar/TailwindNavbar';
 import Footer from '../components/Footer/Footer';
 
 const MyApp = ({ Component, pageProps }) => {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <Component {...pageProps} />
       <Footer />
     </>
