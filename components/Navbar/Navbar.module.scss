@@ -1,239 +1,193 @@
+@import "../_variables.scss";
+
+// Minimalist corner navbar
 .navbar {
   position: fixed;
-  z-index: 1000000;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(11px);
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  top: $spacing-xl;
+  right: $spacing-xl;
+  z-index: 1000;
+  mix-blend-mode: difference;
+}
 
-  &.scrolled {
-    background-color: rgba(0, 0, 0, 0.95);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+.navToggle {
+  width: 64px;
+  height: 64px;
+  background: transparent;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  color: $text-primary;
+  
+  &:hover {
+    transform: scale(1.1);
+    border-color: $primary;
+    color: $primary;
   }
+}
 
-  .navbarContainer {
-    max-width: 4000px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
-  }
-
-  .navHome {
-    width: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Oswald', sans-serif;
-    position: relative;
-    height: 100%;
-    padding: 5px 0;
-    transition: transform 0.2s;
-    text-align: center;
-    z-index: 1000002; // Keep above the fullscreen menu
-
-    &:hover {
-      transform: scale(1.05);
-    }
-
-    .sraLogo {
-      width: 100%;
-      filter: grayscale(1) invert(1); // Make logo visible on dark background
-    }
-  }
-
-  .menuToggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 12px 16px;
-    border-radius: 32px;
+.hamburger {
+  position: relative;
+  width: 20px;
+  height: 16px;
+  
+  span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
     transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 500;
-    font-size: 0.95rem;
-    z-index: 1000002; // Keep above the fullscreen menu
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
-
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.3);
+    
+    &:first-child {
+      top: 0;
     }
-
-    &.menuOpen {
-      background-color: rgba(255, 255, 255, 0.3);
+    
+    &:last-child {
+      bottom: 0;
     }
-
-    .menuText {
-      display: inline-block;
-      margin-right: 8px;
-    }
-
-    .menuIcon {
-      width: 16px;
-      height: 16px;
-      color: white;
+  }
+  
+  &.active {
+    span {
+      &:first-child {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      
+      &:last-child {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
     }
   }
 }
 
-// Fullscreen menu overlay styles (moved to top-level)
-.fullscreenMenu {
+// Full-screen overlay menu
+.menuOverlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #000000;
-  z-index: 1000001;
-  overflow-y: auto;
+  background: rgba($text-primary, 0.98);
+  z-index: 999;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  animation: unfoldIn 0.45s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-  transform-origin: calc(100vw - 2rem) 2rem;
-  transform: scale(0);
-}
-
-@keyframes unfoldIn {
-  from {
-    opacity: 0;
-    transform: scale(0);
-  }
-  to {
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  backdrop-filter: blur(20px);
+  
+  &.open {
     opacity: 1;
-    transform: scale(1);
+    visibility: visible;
   }
 }
 
 .menuContent {
-  width: 100%;
-  max-width: 420px;
-  margin: 0;
-  padding: 0 5vw 0 1.5rem;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.menuClose {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  border: 2px solid rgba(white, 0.3);
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  font-weight: 300;
+  cursor: pointer;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-start;
-  min-height: 80vh;
-  text-align: right;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    border-color: white;
+    transform: scale(1.1);
+  }
 }
 
 .menuItems {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 1.2rem;
-  width: 100%;
-  text-align: right;
+  gap: $spacing-lg;
 }
 
-.menuItemWrapper {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: menuFadeIn 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-  animation-delay: 0.2s;
-}
-
-@keyframes menuFadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.menuItemHeading {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 0.2rem;
-  color: #fff;
-  transition: all 0.3s ease;
-  display: inline-block;
-  position: relative;
-  font-family: 'Oswald', 'Montserrat', 'Arial', sans-serif;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  text-align: right;
-  line-height: 1.1;
-  padding-left: 0.1em;
-
-  &:after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -3px;
-    left: 0;
-    background-color: #fff;
-    transition: width 0.3s ease;
-  }
-
-  &:hover:after {
-    width: 100%;
-  }
-}
-
-.menuItemWithSubmenu .menuItemHeading {
-  margin-bottom: 0.1rem;
-}
-
-.submenuItems {
+.menuItem {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-top: 0.2rem;
-  margin-left: 0;
-  margin-right: 0.7rem;
-  align-items: flex-end;
-}
-
-.submenuLink {
-  font-size: 1rem;
-  color: #bbbbbb;
-  padding: 0.1rem 0 0.1rem 0.2em;
-  transition: all 0.2s ease;
-  display: inline-block;
-  position: relative;
-  font-family: 'Oswald', 'Montserrat', 'Arial', sans-serif;
-  letter-spacing: 0.03em;
-  text-align: right;
-
-  &:after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #bbbbbb;
-    transition: width 0.3s ease;
-  }
-
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-md;
+  cursor: pointer;
+  padding: $spacing-md $spacing-xl;
+  border-radius: $radius-md;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  
   &:hover {
-    color: #fff;
-    &:after {
-      width: 100%;
-    }
+    opacity: 1;
+    background: rgba(white, 0.1);
+    transform: translateX(10px);
+  }
+  
+  &.active {
+    opacity: 1;
+    background: rgba($primary-light, 0.2);
+    border-left: 4px solid $primary-light;
   }
 }
 
-@media (max-width: 780px) {
-  .menuContent {
-    min-height: 70vh;
-    max-width: 90vw;
+.itemNumber {
+  font-family: $font-family-primary;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: rgba(white, 0.5);
+  min-width: 2rem;
+}
+
+.itemTitle {
+  font-family: $font-family-heading;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .navbar {
+    top: $spacing-lg;
+    right: $spacing-lg;
   }
-  .menuItemHeading {
-    font-size: 1.1rem;
+  
+  .navToggle {
+    width: 56px;
+    height: 56px;
   }
-  .submenuLink {
-    font-size: 0.95rem;
+  
+  .menuItem {
+    padding: $spacing-sm $spacing-lg;
   }
-  .menuItems {
-    gap: 0.7rem;
+  
+  .itemTitle {
+    font-size: 1.25rem;
+  }
+  
+  .menuClose {
+    top: -60px;
+    right: -60px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
   }
 }

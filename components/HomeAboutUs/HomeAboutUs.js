@@ -10,48 +10,30 @@ import Link from 'next/link';
 
 const HomeAboutUs = () => {
   return (
-    <>
-      <div className={styles.aboutUs} id='About-us'>
-        <div className={styles.aboutUsMain}>
-          <h1>About Us</h1>
+    <div className={styles.aboutUs} id='About-us'>
+      {/* Single focused About section for horizontal layout */}
+      <div className={styles.aboutUsMain}>
+        <div className={styles.content}>
+          <h1>About SRA</h1>
           <p>{AboutUsText}</p>
-          <h1>About VJTI</h1>
-          <p>{AboutVJTI}</p>
-        </div>
-        <div className={styles.aboutUsTeam}>
-          <p>{AboutUsTeamText}</p>
-          <img
-            src={`/static/images/${AboutUsImages.newgroup}`}
-            alt='SRA Team group photo'
-          />
-        </div>
-        <div className={styles.aboutUsAlumni}>
-          <p>{AboutUsAlumniText}</p>
-          <img
-            src={`/static/images/${AboutUsImages.oldGroup}`}
-            alt='SRA Team group photo'
-          />
+          
+          <div className={styles.quickInfo}>
+            <div className={styles.infoCard}>
+              <h3>Founded</h3>
+              <p>September 2008</p>
+            </div>
+            <div className={styles.infoCard}>
+              <h3>Focus</h3>
+              <p>Robotics & Automation</p>
+            </div>
+            <div className={styles.infoCard}>
+              <h3>Location</h3>
+              <p>VJTI, Mumbai</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div className={styles.ourProjects}>
-        <h1>Projects</h1>
-        <Link href='/projects/flagship'>
-          <button>
-            Flagship Projects &nbsp;<span>&#8594;</span>
-          </button>
-        </Link>
-        <Link href='/projects/eklavya'>
-          <button>
-            Eklavya Projects &nbsp;<span>&#8594;</span>
-          </button>
-        </Link>
-        <Link href='/projects/ongoing'>
-          <button>
-            Ongoing Projects &nbsp;<span>&#8594;</span>
-          </button>
-        </Link>
-      </div>
-    </>
+    </div>
   );
 };
 

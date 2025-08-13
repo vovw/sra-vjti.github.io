@@ -1,4 +1,60 @@
-$black: #000000;
-$dark: #52057b;
-$light: #892cdc;
-$lightest: #bc6ff1;
+// Clean, modern color palette inspired by neuroTUM
+// Emphasizing subtle blues, clean whites, and professional grays
+
+// Primary brand colors
+$primary: #1e3a8a;           // Deep blue (professional, trustworthy)
+$primary-light: #3b82f6;     // Bright blue (accents, links)
+$primary-lighter: #dbeafe;    // Very light blue (backgrounds, highlights)
+$primary-dark: #1e293b;      // Dark slate (headings, text)
+
+// Neutral palette
+$background: #ffffff;         // Pure white background
+$background-secondary: #f8fafc; // Off-white for sections
+$background-accent: #f1f5f9;  // Light gray for cards/panels
+
+// Text colors
+$text-primary: #0f172a;      // Near black for headings
+$text-secondary: #475569;    // Medium gray for body text
+$text-muted: #94a3b8;        // Light gray for captions/metadata
+
+// Interactive elements
+$border-light: #e2e8f0;      // Light borders
+$border-medium: #cbd5e1;     // Medium borders
+$hover-bg: #f1f5f9;          // Subtle hover backgrounds
+
+// Status/accent colors
+$success: #10b981;
+$warning: #f59e0b;
+$error: #ef4444;
+
+// Typography scale
+$font-family-primary: 'Space Mono', 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
+$font-family-heading: 'Space Mono', 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
+$font-family-display: 'Space Mono', 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
+
+// Spacing scale (following 8px grid)
+$spacing-xs: 0.25rem;   // 4px
+$spacing-sm: 0.5rem;    // 8px
+$spacing-md: 1rem;      // 16px
+$spacing-lg: 1.5rem;    // 24px
+$spacing-xl: 2rem;      // 32px
+$spacing-2xl: 3rem;     // 48px
+$spacing-3xl: 4rem;     // 64px
+
+// Border radius
+$radius-sm: 0.25rem;    // 4px
+$radius-md: 0.5rem;     // 8px
+$radius-lg: 0.75rem;    // 12px
+$radius-xl: 1rem;       // 16px
+
+// Shadows (subtle, modern)
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+// Legacy compatibility (gradually phase out)
+$black: $text-primary;
+$dark: $primary-dark;
+$light: $primary-light;
+$lightest: $primary-lighter;
+$muted: $background-accent;
