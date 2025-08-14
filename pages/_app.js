@@ -1,14 +1,11 @@
 import '../styles/globals.scss';
-import Navbar from '../components/Navbar/Navbar';
-// import TailwindNavbar from '../components/TailwindNavbar/TailwindNavbar';
-import Footer from '../components/Footer/Footer';
+// Removed global Navbar and Footer for horizontal layout
+// Components now handle their own navigation
 
 const MyApp = ({ Component, pageProps }) => {
   return (
     <>
-      <Navbar />
       <Component {...pageProps} />
-      <Footer />
     </>
   );
 };

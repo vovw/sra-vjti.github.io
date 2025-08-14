@@ -7,8 +7,11 @@ const Projects = () => {
     <div className={styles.projects}>
       <div className={styles.content}>
         <h1>Our Projects</h1>
-        <p>Explore our innovative robotics and automation projects that push the boundaries of technology.</p>
-        
+        <p>
+          Explore our innovative robotics and automation projects that push the
+          boundaries of technology.
+        </p>
+
         <div className={styles.projectButtons}>
           <Link href='/projects/flagship'>
             <button className={styles.projectButton}>

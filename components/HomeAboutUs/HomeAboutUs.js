@@ -16,7 +16,7 @@ const HomeAboutUs = () => {
         <div className={styles.content}>
           <h1>About SRA</h1>
           <p>{AboutUsText}</p>
-          
+
           <div className={styles.quickInfo}>
             <div className={styles.infoCard}>
               <h3>Founded</h3>

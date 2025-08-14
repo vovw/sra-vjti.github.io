@@ -39,7 +39,9 @@ const Navbar = ({ currentSection = 0, onSectionChange, sections = [] }) => {
       {/* Minimalist corner navigation */}
       <nav className={styles.navbar}>
         <div className={styles.navToggle} onClick={toggleMenu}>
-          <div className={`${styles.hamburger} ${isMenuOpen ? styles.active : ''}`}>
+          <div
+            className={`${styles.hamburger} ${isMenuOpen ? styles.active : ''}`}
+          >
             <span></span>
             <span></span>
           </div>
@@ -49,13 +51,17 @@ const Navbar = ({ currentSection = 0, onSectionChange, sections = [] }) => {
       {/* Full-screen overlay menu */}
       <div className={`${styles.menuOverlay} ${isMenuOpen ? styles.open : ''}`}>
         <div className={styles.menuContent}>
-          <div className={styles.menuClose} onClick={toggleMenu}>×</div>
-          
+          <div className={styles.menuClose} onClick={toggleMenu}>
+            ×
+          </div>
+
           <div className={styles.menuItems}>
             {sections.map((section, index) => (
               <div
                 key={index}
-                className={`${styles.menuItem} ${currentSection === index ? styles.active : ''}`}
+                className={`${styles.menuItem} ${
+                  currentSection === index ? styles.active : ''
+                }`}
                 onClick={() => handleNavClick(index)}
               >
                 <span className={styles.itemNumber}>0{index + 1}</span>

@@ -1,8 +1,10 @@
-@import "../../components/_variables.scss";
+@import '../../components/_variables.scss';
 
 // Override fonts for About Us section only
-$about-font-heading: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-$about-font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+$about-font-heading: 'Inter', 'SF Pro Display', -apple-system,
+  BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+$about-font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  'Helvetica Neue', Arial, sans-serif;
 
 .aboutUs {
   width: 100vw;
@@ -10,11 +12,14 @@ $about-font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'He
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   .aboutUsMain {
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(rgba(30, 58, 138, 0.8), rgba(15, 23, 42, 0.7)),
+    background-image: linear-gradient(
+        rgba(30, 58, 138, 0.8),
+        rgba(15, 23, 42, 0.7)
+      ),
       url('/static/images/aboutus-final.jpg');
     background-position: center;
     background-size: cover;
@@ -23,11 +28,11 @@ $about-font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'He
     justify-content: center;
     color: white;
     padding: $spacing-3xl;
-    
+
     .content {
       text-align: center;
       max-width: 900px;
-      
+
       h1 {
         font-family: $about-font-heading;
         font-size: 3.5rem;
@@ -35,12 +40,12 @@ $about-font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'He
         margin-bottom: $spacing-xl;
         letter-spacing: -0.02em;
         line-height: 1.1;
-        
+
         @media (max-width: 768px) {
           font-size: 2.5rem;
         }
       }
-      
+
       p {
         font-family: $about-font-primary;
         font-size: 1.3rem;
@@ -48,23 +53,23 @@ $about-font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'He
         line-height: 1.7;
         margin-bottom: $spacing-3xl;
         color: rgba(255, 255, 255, 0.95);
-        
+
         @media (max-width: 768px) {
           font-size: 1.1rem;
           margin-bottom: $spacing-2xl;
         }
       }
-      
+
       .quickInfo {
         display: flex;
         justify-content: center;
         gap: $spacing-xl;
-        
+
         @media (max-width: 768px) {
           flex-direction: column;
           gap: $spacing-md;
         }
-        
+
         .infoCard {
           background: rgba(255, 255, 255, 0.1);
           backdrop-filter: blur(10px);
@@ -73,7 +78,7 @@ $about-font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'He
           padding: $spacing-lg;
           min-width: 150px;
           transition: all 0.3s ease;
-          
+
           h3 {
             font-family: $about-font-heading;
             font-size: 0.9rem;
@@ -83,7 +88,7 @@ $about-font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'He
             color: rgba(255, 255, 255, 0.7);
             margin-bottom: $spacing-sm;
           }
-          
+
           p {
             font-family: $about-font-primary;
             font-size: 1.1rem;
@@ -92,12 +97,12 @@ $about-font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'He
             margin: 0;
             line-height: 1.3;
           }
-          
+
           &:hover {
             background: rgba(255, 255, 255, 0.15);
             transform: translateY(-2px);
           }
-          
+
           @media (max-width: 768px) {
             padding: $spacing-md;
             min-width: auto;
@@ -105,7 +110,7 @@ $about-font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'He
         }
       }
     }
-    
+
     @media (max-width: 768px) {
       padding: $spacing-xl;
     }

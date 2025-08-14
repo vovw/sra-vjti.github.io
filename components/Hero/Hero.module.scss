@@ -1,4 +1,4 @@
-@import "../../components/_variables.scss";
+@import '../../components/_variables.scss';
 
 .hero {
   width: 100%;
@@ -23,7 +23,11 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.4), rgba(15, 23, 42, 0.6));
+    background: linear-gradient(
+      135deg,
+      rgba(30, 58, 138, 0.4),
+      rgba(15, 23, 42, 0.6)
+    );
     z-index: 1;
   }
 
@@ -60,7 +64,7 @@
   max-width: 900px;
   margin: 0 auto $spacing-3xl;
   line-height: 1.6;
-  
+
   span {
     display: inline-block;
     margin: 0 $spacing-xs;
@@ -103,7 +107,7 @@
 
   &:hover {
     border-color: white;
-    
+
     &::before {
       background: white;
     }
@@ -111,7 +115,11 @@
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translate(-50%, -50%) translateY(0);
   }
   40% {
@@ -175,7 +183,11 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.85), rgba(15, 23, 42, 0.75));
+    background: linear-gradient(
+      135deg,
+      rgba(30, 58, 138, 0.85),
+      rgba(15, 23, 42, 0.75)
+    );
     z-index: 1;
   }
 

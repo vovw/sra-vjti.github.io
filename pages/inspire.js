@@ -16,4 +16,4 @@ const InspirePage = () => {
   );
 };
 
-export default InspirePage; 
+export default InspirePage;

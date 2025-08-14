@@ -1,9 +1,13 @@
-@import "../_variables.scss";
+@import '../_variables.scss';
 
 .projects {
   width: 100vw;
   height: 100vh;
-  background-image: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(15, 23, 42, 0.8)),
+  background-image: linear-gradient(
+      135deg,
+      rgba(30, 58, 138, 0.9),
+      rgba(15, 23, 42, 0.8)
+    ),
     url('/static/images/our-projects-final.jpg');
   background-size: cover;
   background-position: center;
@@ -11,24 +15,24 @@
   align-items: center;
   justify-content: center;
   color: white;
-  
+
   .content {
     text-align: center;
     max-width: 800px;
     padding: $spacing-3xl;
-    
+
     h1 {
       font-family: $font-family-heading;
       font-size: 4rem;
       font-weight: 700;
       margin-bottom: $spacing-lg;
       letter-spacing: -0.02em;
-      
+
       @media (max-width: 768px) {
         font-size: 3rem;
       }
     }
-    
+
     p {
       font-family: $font-family-primary;
       font-size: 1.3rem;
@@ -36,25 +40,25 @@
       line-height: 1.6;
       margin-bottom: $spacing-3xl;
       color: rgba(255, 255, 255, 0.9);
-      
+
       @media (max-width: 768px) {
         font-size: 1.1rem;
         margin-bottom: $spacing-2xl;
       }
     }
-    
+
     .projectButtons {
       display: flex;
       flex-direction: column;
       gap: $spacing-lg;
       align-items: center;
-      
+
       a {
         text-decoration: none;
         width: 100%;
         max-width: 300px;
       }
-      
+
       .projectButton {
         width: 100%;
         background: rgba(255, 255, 255, 0.1);
@@ -68,42 +72,42 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        
+
         .buttonText {
           font-family: $font-family-primary;
           font-size: 1.1rem;
           font-weight: 500;
         }
-        
+
         .arrow {
           font-size: 1.2rem;
           transition: transform 0.3s ease;
         }
-        
+
         &:hover {
           background: rgba(255, 255, 255, 0.2);
           border-color: rgba(255, 255, 255, 0.6);
           transform: translateY(-2px);
-          
+
           .arrow {
             transform: translateX(5px);
           }
         }
-        
+
         @media (max-width: 768px) {
           padding: $spacing-md $spacing-lg;
-          
+
           .buttonText {
             font-size: 1rem;
           }
         }
       }
-      
+
       @media (max-width: 768px) {
         gap: $spacing-md;
       }
     }
-    
+
     @media (max-width: 768px) {
       padding: $spacing-xl;
     }

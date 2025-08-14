@@ -3,7 +3,7 @@
 .reach {
   padding: $spacing-3xl 0;
   background: $background-secondary;
-  
+
   h1 {
     margin: 0 0 $spacing-2xl;
     text-align: center;
@@ -11,13 +11,13 @@
     font-family: $font-family-heading;
     font-weight: 600;
     color: $text-primary;
-    
+
     @media (max-width: 768px) {
       font-size: 2rem;
       margin-bottom: $spacing-xl;
     }
   }
-  
+
   .reachGroup {
     display: flex;
     flex-wrap: wrap;
@@ -27,18 +27,18 @@
     padding: 0 $spacing-lg;
     max-width: 1200px;
     margin: 0 auto;
-    
+
     img {
       width: 140px;
       height: auto;
       transition: all 0.3s ease;
       border-radius: $radius-md;
-      
+
       &:hover {
         transform: translateY(-4px) scale(1.05);
         box-shadow: $shadow-lg;
       }
-      
+
       @media (max-width: 768px) {
         width: 100px;
       }

@@ -19,7 +19,7 @@
     color: $text-primary;
     margin-bottom: 3rem;
     letter-spacing: -0.02em;
-    
+
     @media (max-width: 768px) {
       font-size: 2.5rem;
       margin-bottom: 2rem;
@@ -32,7 +32,7 @@
     flex-wrap: wrap;
     justify-content: center;
     max-width: 800px;
-    
+
     @media (max-width: 768px) {
       flex-direction: column;
       gap: 1.5rem;
@@ -54,7 +54,7 @@
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
-      
+
       &::before {
         content: '';
         position: absolute;
@@ -62,21 +62,26 @@
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
         transition: left 0.5s;
       }
-      
+
       &:hover {
         background: rgba(255, 255, 255, 0.08);
         border-color: rgba(255, 255, 255, 0.2);
         transform: translateY(-2px);
         color: $accent-primary;
-        
+
         &::before {
           left: 100%;
         }
       }
-      
+
       @media (max-width: 768px) {
         font-size: 1.1rem;
         padding: 1.2rem 2rem;

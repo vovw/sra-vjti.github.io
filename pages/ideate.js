@@ -12,4 +12,4 @@ const IdeatePage = () => {
   );
 };
 
-export default IdeatePage; 
+export default IdeatePage;

@@ -1,7 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './HorizontalLayout.module.scss';
 
-const HorizontalLayout = ({ components = [], currentSection, onSectionChange }) => {
+const HorizontalLayout = ({
+  components = [],
+  currentSection,
+  onSectionChange,
+}) => {
   const containerRef = useRef(null);
   const [isScrolling, setIsScrolling] = useState(false);
 
@@ -11,7 +15,7 @@ const HorizontalLayout = ({ components = [], currentSection, onSectionChange }) 
 
     const handleWheel = (e) => {
       if (isScrolling) return;
-      
+
       e.preventDefault();
       setIsScrolling(true);
 
@@ -37,13 +41,13 @@ const HorizontalLayout = ({ components = [], currentSection, onSectionChange }) 
 
   return (
     <div className={styles.viewport}>
-      <div 
+      <div
         ref={containerRef}
         className={styles.container}
         style={{ width: `${components.length * 100}vw` }}
       >
         {components.map((Component, index) => (
-          <div 
+          <div
             key={index}
             className={styles.section}
             data-active={index === currentSection}
