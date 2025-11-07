@@ -68,7 +68,7 @@ const Sponsors = () => {
   return (
     <>
       <Hero
-        imgName={'sponsors-hero.jpg'}
+        imgName={'sponsors-hero.webp'}
         backgroundPosition={'center top'}
         title={<>Sponsor us</>}
         subtitleList={['Help us maintain our legacy of excellence!']}

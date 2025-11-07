@@ -6,7 +6,7 @@ const Publications = () => {
   return (
     <>
       <Hero
-        imgName={'publications-hero.jpg'}
+        imgName={'publications-hero.webp'}
         backgroundPosition={'center top'}
         title={<>Publications</>}
         subtitleList={[

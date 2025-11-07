@@ -14,7 +14,7 @@ const Home = () => {
         <title>Home | SRA VJTI</title>
       </Head>
       <Hero
-        imgName={'landing-hero.jpg'}
+        imgName={'landing-hero.webp'}
         title={
           <>
             Society of

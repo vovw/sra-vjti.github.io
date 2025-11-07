@@ -38,7 +38,7 @@ const Alumni = () => {
   return (
     <>
       <Hero
-        imgName={'alumni-hero.jpg'}
+        imgName={'alumni-hero.webp'}
         title={<>Alumni</>}
         subtitleList={['Lighting the way for generations to come.']}
         isHome={false}

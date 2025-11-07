@@ -9,7 +9,7 @@ const FlagshipProjects = () => {
   return (
     <>
       <Hero
-        imgName={'flagship-hero.jpg'}
+        imgName={'flagship-hero.webp'}
         title={<>Flagship Projects</>}
         subtitleList={['Innovation exemplified.']}
         isHome={false}

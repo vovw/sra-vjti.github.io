@@ -14,7 +14,7 @@ const OngoingProjects = () => {
   return (
     <>
       <Hero
-        imgName={'ongoing-hero.jpg'}
+        imgName={'ongoing-hero.webp'}
         title={<>Ongoing Projects</>}
         subtitleList={['Ingenuinity in progress.']}
         isHome={false}

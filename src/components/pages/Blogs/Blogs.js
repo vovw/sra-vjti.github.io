@@ -9,7 +9,7 @@ const Blogs = () => {
   return (
     <React.Fragment>
       <Hero
-        imgName={'internships-hero.jpg'}
+        imgName={'internships-hero.webp'}
         backgroundPosition={'center center'}
         title={
           <>

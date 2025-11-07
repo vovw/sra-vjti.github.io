@@ -6,7 +6,7 @@ const Achievements = () => {
   return (
     <>
       <Hero
-        imgName={'achievements-hero.jpg'}
+        imgName={'achievements-hero.webp'}
         backgroundPosition={'center top'}
         title={<>Achievements</>}
         subtitleList={["What we're proud of!"]}

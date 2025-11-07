@@ -1,7 +1,7 @@
 const SenateList = [
   {
     name: 'Atharva Kashalkar',
-    imgName: 'Team/2026/atharva_kashalkar.jpg',
+    imgName: 'Team/2026/atharva_kashalkar.webp',
     sub: (
       <>
         General Secretary <br />
@@ -14,7 +14,7 @@ const SenateList = [
   },
   {
     name: 'Shankari Anandakrishnan',
-    imgName: 'Team/2026/Shankari.jpg',
+    imgName: 'Team/2026/Shankari.webp',
     sub: (
       <>
         Jt. General Secretary <br />
@@ -26,7 +26,7 @@ const SenateList = [
   },
   {
     name: 'Atharva Atre',
-    imgName: 'Team/2026/Atharva Atre.jpg',
+    imgName: 'Team/2026/Atharva Atre.webp',
     sub: (
       <>
         Jt. General Secretary <br />
@@ -50,7 +50,7 @@ const SenateList = [
   },
   {
     name: 'Sarvesh Patki',
-    imgName: 'Team/2026/_storage_emulated_0_DCIM_Camera_Sarvesh_Patki.jpg',
+    imgName: 'Team/2026/_storage_emulated_0_DCIM_Camera_Sarvesh_Patki.webp',
     sub: (
       <>
         Mechanical head <br />
@@ -62,7 +62,7 @@ const SenateList = [
   },
   {
     name: 'Saish Karole',
-    imgName: 'Team/2026/Saish_Karole.jpg',
+    imgName: 'Team/2026/Saish_Karole.webp',
     sub: (
       <>
         Sponsorship head <br />
@@ -74,7 +74,7 @@ const SenateList = [
   },
   {
     name: 'Aditya Vivekanand',
-    imgName: 'Team/2026/Aditya_Vivekanand.jpeg',
+    imgName: 'Team/2026/Aditya_Vivekanand.webp',
     sub: (
       <>
         Marketing head <br />
@@ -87,7 +87,7 @@ const SenateList = [
   },
   {
     name: 'Anish Mahadevan',
-    imgName: 'Team/2026/Anish_Mahadevan.jpg',
+    imgName: 'Team/2026/Anish_Mahadevan.webp',
     sub: (
       <>
         Marketing head <br />
@@ -99,7 +99,7 @@ const SenateList = [
   },
   {
     name: 'Atharv Dubey',
-    imgName: 'Team/2026/Atharv_Dubey.jpeg',
+    imgName: 'Team/2026/Atharv_Dubey.webp',
     sub: (
       <>
         TY Core
@@ -112,7 +112,7 @@ const SenateList = [
   },
   {
     name: 'Abhinav Ananthu',
-    imgName: 'Team/2026/Abhinav_ananthu.jpg',
+    imgName: 'Team/2026/Abhinav_ananthu.webp',
     sub: (
       <>
         TY Core
@@ -125,7 +125,7 @@ const SenateList = [
   },
   {
     name: 'Aryan Nanda',
-    imgName: 'Team/2026/Aryan Nanda.jpg',
+    imgName: 'Team/2026/Aryan Nanda.webp',
     sub: (
       <>
         TY Core
@@ -138,7 +138,7 @@ const SenateList = [
   },
   {
     name: 'Purva Sunil Yeshi',
-    imgName: 'Team/2026/Purva_Yeshi.jpg',
+    imgName: 'Team/2026/Purva_Yeshi.webp',
     sub: (
       <>
         Core member
@@ -151,7 +151,7 @@ const SenateList = [
   },
   {
     name: 'Suraj Sonawane',
-    imgName: 'Team/2026/Suraj Sonawane.jpg',
+    imgName: 'Team/2026/Suraj Sonawane.webp',
     sub: (
       <>
         Core member
@@ -164,63 +164,63 @@ const SenateList = [
   },
   {
     name: 'Mahesh Tupe ',
-    imgName: 'Team/2025/Mahesh_Tupe_25.jpg',
+    imgName: 'Team/2025/Mahesh_Tupe_25.webp',
     sub: <>B.Tech Textile ' 25</>,
     linkedInLink: 'https://www.linkedin.com/in/mahesh-tupe-879393243/',
     githubLink: 'https://github.com/Asc91',
   },
   {
     name: 'Zain Siddavatam',
-    imgName: 'Team/2025/Zain_Siddavatam_25.jpeg',
+    imgName: 'Team/2025/Zain_Siddavatam_25.webp',
     sub: <>B.Tech Electrical ' 25</>,
     linkedInLink: 'https://www.linkedin.com/in/zain-siddavatam/',
     githubLink: 'https://github.com/SuperChamp234',
   },
   {
     name: 'Alqama Shaikh',
-    imgName: 'Team/2025/Alqama_Shaikh_25.jpeg',
+    imgName: 'Team/2025/Alqama_Shaikh_25.webp',
     sub: <>B.Tech Mechanical ' 25</>,
     linkedInLink: 'https://www.linkedin.com/in/mohd-alqama-shaikh-636587229/',
     githubLink: 'https://github.com/aPR0T0',
   },
   {
     name: 'Harsh Bhosale',
-    imgName: 'Team/2025/Harsh.jpeg',
+    imgName: 'Team/2025/Harsh.webp',
     sub: <>B.Tech Electronics ' 25</>,
     linkedInLink: 'https://in.linkedin.com/in/hsbh/',
     githubLink: 'https://github.com/harshbhosale01',
   },
   {
     name: 'Janhavi Deshpande',
-    imgName: 'Team/2025/Janhavi.jpg',
+    imgName: 'Team/2025/Janhavi.webp',
     sub: <>B.Tech Mechanical ' 25</>,
     linkedInLink: 'https://in.linkedin.com/in/janhavi-deshpande-a104b8238/',
     githubLink: 'https://github.com/janhavi1803',
   },
   {
     name: 'Advait Dhamorikar',
-    imgName: 'Team/2025/Advait.jpg',
+    imgName: 'Team/2025/Advait.webp',
     sub: <>B.Tech Electrical ' 25</>,
     linkedInLink: 'https://in.linkedin.com/in/advait-dhamorikar/',
     githubLink: 'https://github.com/advait-0',
   },
   {
     name: 'Vaidic Gupta',
-    imgName: 'Team/2025/Vaidic.JPG',
+    imgName: 'Team/2025/Vaidic.webp',
     sub: <>B.Tech Electrical ' 25</>,
     linkedInLink: 'https://in.linkedin.com/in/vaidic-gupta-605257230/',
     githubLink: 'https://github.com/Vaidicgupta',
   },
   {
     name: 'Pratham Deshmukh',
-    imgName: 'Team/2025/Pratham.jpg',
+    imgName: 'Team/2025/Pratham.webp',
     sub: <>B.Tech Electrical ' 25</>,
     linkedInLink: 'https://www.linkedin.com/in/pratham-deshmukh-a027a7227/',
     githubLink: 'https://github.com/Pratham-Bot',
   },
   {
     name: 'Aryan Karawale',
-    imgName: 'Team/2025/Aryan.jpg',
+    imgName: 'Team/2025/Aryan.webp',
     sub: <>B.Tech Electronics & Telecommunication ' 25</>,
     linkedInLink: 'https://www.linkedin.com/in/aryan-karawale-54b6b7233/',
     githubLink: 'https://github.com/Aryan-karawale',

@@ -4,19 +4,19 @@ const AchievementsList = [
     achs: [
       {
         name: '3rd place in 2 Wheeled Self-Balancing Bike',
-        imgName: '2022-Eyantra1.jpg',
+        imgName: '2022-Eyantra1.webp',
       },
       {
         name: '4th place in Robotic Functional Weeder',
-        imgName: '2022-Eyantra2.jpg',
+        imgName: '2022-Eyantra2.webp',
       },
       {
         name: '20 selections in Google Summer of Code',
-        imgName: '2022-GSoC.jpg',
+        imgName: '2022-GSoC.webp',
       },
       {
         name: '3rd place in AMD Xilinx Adaptive computing challenge (Data Centre AI Track)',
-        imgName: '2022-Xilinx.jpg',
+        imgName: '2022-Xilinx.webp',
       },
     ],
   },
@@ -25,15 +25,15 @@ const AchievementsList = [
     achs: [
       {
         name: '2nd prize in Delta International Manufacturing Contest',
-        imgName: 'delta2021.jpeg',
+        imgName: 'delta2021.webp',
       },
       {
         name: '1st place in ML track of Datathon by KJSCE',
-        imgName: '2021-Datathon.jpg',
+        imgName: '2021-Datathon.webp',
       },
       {
         name: '1st place in Vision Beyond Limits in IIT Bombay, Techfest',
-        imgName: '2021-VBL.jpg',
+        imgName: '2021-VBL.webp',
       },
     ],
   },
@@ -42,15 +42,15 @@ const AchievementsList = [
     achs: [
       {
         name: 'TATA Motors AI Hackathon',
-        imgName: '2019-TATA Motors AI Hackathon.jpg',
+        imgName: '2019-TATA Motors AI Hackathon.webp',
       },
       {
         name: 'Hunar 2.0',
-        imgName: '2019-Hunar 2.0.jpg',
+        imgName: '2019-Hunar 2.0.webp',
       },
       {
         name: 'Smart India  Hackathon',
-        imgName: '2019-Smart India  Hackathon.jpg',
+        imgName: '2019-Smart India  Hackathon.webp',
       },
     ],
   },
@@ -59,19 +59,19 @@ const AchievementsList = [
     achs: [
       {
         name: 'ABU RoboCon',
-        imgName: '2018-ABU RoboCon.jpg',
+        imgName: '2018-ABU RoboCon.webp',
       },
       {
         name: 'NVIDIA Jetson Developer Challenge',
-        imgName: '2018-NVIDIA Jetson Developer Challenge.jpg',
+        imgName: '2018-NVIDIA Jetson Developer Challenge.webp',
       },
       {
         name: 'NVIDIA Jetson Developer Challenge',
-        imgName: '2018-NVIDIA Jetson Developer Challenge1.png',
+        imgName: '2018-NVIDIA Jetson Developer Challenge1.webp',
       },
       {
         name: 'I HACK - IIT Bombay',
-        imgName: '2018-I HACK - IIT Bombay.png',
+        imgName: '2018-I HACK - IIT Bombay.webp',
       },
     ],
   },
@@ -80,11 +80,11 @@ const AchievementsList = [
     achs: [
       {
         name: 'Global Cyber Challenge Peace-A-thon',
-        imgName: '2017-Global Cyber Challenge Peace-A-thon.jpg',
+        imgName: '2017-Global Cyber Challenge Peace-A-thon.webp',
       },
       {
         name: 'Ernest Young Blockchain Hackathon',
-        imgName: '2017-Ernest Young Blockchain Hackathon.jpg',
+        imgName: '2017-Ernest Young Blockchain Hackathon.webp',
       },
     ],
   },
@@ -93,7 +93,7 @@ const AchievementsList = [
     achs: [
       {
         name: 'ABU RoboCon',
-        imgName: '2014-ABU RoboCon.jpg',
+        imgName: '2014-ABU RoboCon.webp',
       },
     ],
   },
@@ -102,7 +102,7 @@ const AchievementsList = [
     achs: [
       {
         name: "SRA's humminger was awarded as one of the best nationally by DRDO.",
-        imgName: '2010-DRDO Aerial Vehicle.jpg',
+        imgName: '2010-DRDO Aerial Vehicle.webp',
       },
     ],
   },

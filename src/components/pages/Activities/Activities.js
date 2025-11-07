@@ -8,7 +8,7 @@ const Activities = () => {
   return (
     <>
       <Hero
-        imgName={'activities-hero.jpg'}
+        imgName={'activities-hero.webp'}
         backgroundPosition={'center top'}
         title={<>Activities</>}
         subtitleList={['All the fun, passed all along.']}

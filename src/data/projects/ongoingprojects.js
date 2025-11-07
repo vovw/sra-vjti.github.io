@@ -2,7 +2,7 @@
 
 const OngoingProjectsData = [
   {
-    imgName: 'titan_legs.jpeg',
+    imgName: 'titan_legs.webp',
     name: 'TitanLegs',
     sub: (
       <>
@@ -42,7 +42,7 @@ const OngoingProjectsData = [
   },
 
   {
-    imgName: 'synapse32.jpeg',
+    imgName: 'synapse32.webp',
     name: 'Synapse32',
     sub: (
       <>

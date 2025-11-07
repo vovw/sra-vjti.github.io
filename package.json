@@ -10,7 +10,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "optimize-images": "node scripts/optimize-images.js"
   },
   "repository": {
     "type": "git",

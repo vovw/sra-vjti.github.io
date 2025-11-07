@@ -8,7 +8,7 @@ const Startups = () => {
   return (
     <>
       <Hero
-        imgName={'startups-hero.jpg'}
+        imgName={'startups-hero.webp'}
         backgroundPosition={'center top'}
         title={<>Startups</>}
         subtitleList={['Launching... into space!']}

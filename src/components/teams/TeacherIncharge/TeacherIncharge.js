@@ -7,7 +7,7 @@ const TeacherIncharge = () => {
   return (
     <>
       <Hero
-        imgName={'teachers-hero.jpg'}
+        imgName={'teachers-hero.webp'}
         backgroundPosition={'center top'}
         title={<>Teachers Incharge</>}
         subtitleList={['']}

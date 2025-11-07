@@ -10,7 +10,7 @@ const EklavyaProjects = () => {
   return (
     <div className={styles.eklavyaProjectsContainer}>
       <Hero
-        imgName={'eklavya-hero.jpg'}
+        imgName={'eklavya-hero.webp'}
         backgroundPosition={'center top'}
         title={<>Eklavya Projects</>}
         subtitleList={['Nurturing the future']}
