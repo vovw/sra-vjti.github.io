@@ -55,7 +55,10 @@ async function optimizeImage(filePath) {
     const optimizedStats = fs.statSync(outputPath);
     totalOptimizedSize += optimizedStats.size;
 
-    const reduction = ((1 - optimizedStats.size / originalStats.size) * 100).toFixed(1);
+    const reduction = (
+      (1 - optimizedStats.size / originalStats.size) *
+      100
+    ).toFixed(1);
     const originalKB = (originalStats.size / 1024).toFixed(1);
     const optimizedKB = (optimizedStats.size / 1024).toFixed(1);
 
@@ -103,17 +106,32 @@ async function main() {
   console.log('📊 Statistics:');
   console.log(`  • Images converted: ${convertedCount}`);
   console.log(`  • Images skipped: ${skippedCount}`);
-  console.log(`  • Original total size: ${(totalOriginalSize / 1024 / 1024).toFixed(2)} MB`);
-  console.log(`  • Optimized total size: ${(totalOptimizedSize / 1024 / 1024).toFixed(2)} MB`);
+  console.log(
+    `  • Original total size: ${(totalOriginalSize / 1024 / 1024).toFixed(2)} MB`
+  );
+  console.log(
+    `  • Optimized total size: ${(totalOptimizedSize / 1024 / 1024).toFixed(2)} MB`
+  );
 
   if (totalOriginalSize > 0) {
-    const totalReduction = ((1 - totalOptimizedSize / totalOriginalSize) * 100).toFixed(1);
-    const savedMB = ((totalOriginalSize - totalOptimizedSize) / 1024 / 1024).toFixed(2);
-    console.log(`  • Total reduction: ${totalReduction}% (saved ${savedMB} MB)`);
+    const totalReduction = (
+      (1 - totalOptimizedSize / totalOriginalSize) *
+      100
+    ).toFixed(1);
+    const savedMB = (
+      (totalOriginalSize - totalOptimizedSize) /
+      1024 /
+      1024
+    ).toFixed(2);
+    console.log(
+      `  • Total reduction: ${totalReduction}% (saved ${savedMB} MB)`
+    );
   }
 
   console.log(`  • Time taken: ${duration}s`);
-  console.log('\n💡 Tip: Update your code to use .webp extensions for the converted images!');
+  console.log(
+    '\n💡 Tip: Update your code to use .webp extensions for the converted images!'
+  );
 }
 
 main().catch(console.error);
