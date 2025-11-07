@@ -1,6 +1,15 @@
-import styles from './Sponsors.module.scss';
-import Hero from '@/components/common/Hero/Hero';
+import { useState, useEffect, memo, useMemo } from 'react';
+import Image from 'next/image';
 import { saveAs } from 'file-saver';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faExternalLink,
+  faAngleDown,
+  faAngleUp,
+  faDonate,
+} from '@fortawesome/free-solid-svg-icons';
+import Hero from '@/components/common/Hero/Hero';
+import useWindowSize from '@/lib/utils/ResizeHook';
 import {
   diamondSponsors,
   goldSponsors,
@@ -9,19 +18,35 @@ import {
   sponsorsText_1,
   sponsorsText_2,
   sponsorsSubText,
-  SponsorshipBrochure,
 } from '@/data/config/sponsors';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faExternalLink,
-  faAngleDown,
-  faAngleUp,
-  faHandHoldingDollar,
-  faDonate,
-} from '@fortawesome/free-solid-svg-icons';
-import { faOpencart, faOpenid } from '@fortawesome/free-brands-svg-icons';
-import useWindowSize from '@/lib/utils/ResizeHook';
-import { useEffect, useState } from 'react';
+import styles from './Sponsors.module.scss';
+
+const SponsorTier = memo(({ sponsors, className, tier }) => (
+  <div className={styles.reachGroup}>
+    {sponsors.map((item, idx) => (
+      <a
+        href={item.link}
+        key={`${tier}_sponsor_${idx}`}
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        <div className={className}>
+          <Image
+            src={`/images/sponsors/${item.image}`}
+            alt={`${tier} sponsor ${idx + 1}`}
+            width={tier === 'diamond' ? 300 : tier === 'gold' ? 250 : 200}
+            height={150}
+            loading='lazy'
+            quality={90}
+            style={{ objectFit: 'contain' }}
+          />
+        </div>
+      </a>
+    ))}
+  </div>
+));
+
+SponsorTier.displayName = 'SponsorTier';
 
 const Sponsors = () => {
   const [mobileView, setMobileView] = useState(false);
@@ -29,23 +54,15 @@ const Sponsors = () => {
   const size = useWindowSize();
 
   useEffect(() => {
-    if (size.width > 780) {
-      setMobileView(false);
-    } else {
-      setMobileView(true);
-    }
+    setMobileView(size.width <= 780);
   }, [size.width]);
 
   useEffect(() => {
-    if (mobileView) {
-      setvisiblePara(false);
-    } else {
-      setvisiblePara(true);
-    }
+    setvisiblePara(!mobileView);
   }, [mobileView]);
 
   const saveFile = () => {
-    saveAs(`/static/documents/PR_brochure_24-25.pdf`, `SRA_Brochure_2k24.pdf`);
+    saveAs(`/documents/PR_brochure_24-25.pdf`, `SRA_Brochure_2k24.pdf`);
   };
 
   return (
@@ -59,49 +76,37 @@ const Sponsors = () => {
       />
       <div className={styles.activityList} id='is'>
         <div className={styles.reach}>
-          <h1>Why Sponsor Us ?</h1>
+          <h1>Why Sponsor Us?</h1>
           <p>{sponsorsText_1}</p>
-          {visiblePara ? <p>{sponsorsText_2}</p> : <></>}
-          {mobileView ? (
+          {visiblePara && <p>{sponsorsText_2}</p>}
+          {mobileView && (
             <button
               className={styles.more}
-              onClick={() => setvisiblePara((visiblePara) => !visiblePara)}
+              onClick={() => setvisiblePara((prev) => !prev)}
+              aria-label={visiblePara ? 'Read less' : 'Read more'}
             >
-              {visiblePara ? (
-                <>
-                  {'Read Less '}
-                  <span>
-                    <FontAwesomeIcon icon={faAngleUp} />
-                  </span>
-                </>
-              ) : (
-                <>
-                  {'Read More '}
-                  <span>
-                    <FontAwesomeIcon icon={faAngleDown} />
-                  </span>
-                </>
-              )}
+              {visiblePara ? 'Read Less ' : 'Read More '}
+              <span>
+                <FontAwesomeIcon icon={visiblePara ? faAngleUp : faAngleDown} />
+              </span>
             </button>
-          ) : (
-            <></>
           )}
           <p>
             <b>{sponsorsSubText}</b>
           </p>
-          <div
-            style={{ display: 'flex', gap: '50px', justifyContent: 'center' }}
-          >
-            <a>
-              <button onClick={saveFile}>
-                Brochure{' '}
-                <span>
-                  <FontAwesomeIcon icon={faExternalLink} />
-                </span>
-              </button>
-            </a>
-            <a href='https://pages.razorpay.com/support-sra' target='_blank'>
-              <button>
+          <div className={styles.buttonGroup}>
+            <button onClick={saveFile} aria-label='Download brochure'>
+              Brochure{' '}
+              <span>
+                <FontAwesomeIcon icon={faExternalLink} />
+              </span>
+            </button>
+            <a
+              href='https://pages.razorpay.com/support-sra'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <button aria-label='Donate to SRA'>
                 Donate{' '}
                 <span>
                   <FontAwesomeIcon icon={faDonate} />
@@ -109,74 +114,66 @@ const Sponsors = () => {
               </button>
             </a>
           </div>
+
           <h1>Sponsors</h1>
-          <img
-            src={`/images/sponsors/sponsorsLevel/${levelImages[0]}`}
-            alt=''
-            className={styles.levelImage}
-            key={`level_1`}
-          ></img>
-          <hr />
-          <div className={styles.reachGroup}>
-            {diamondSponsors.map((item, idx) => {
-              return (
-                <a href={item.link}>
-                  <img
-                    src={`/images/sponsors/${item.image}`}
-                    alt=''
-                    className={styles.diamondImg}
-                    key={`alumni_reach_${idx}`}
-                  ></img>
-                </a>
-              );
-            })}
+
+          {/* Diamond Tier */}
+          <div className={styles.levelImage}>
+            <Image
+              src={`/images/sponsors/sponsorsLevel/${levelImages[0]}`}
+              alt='Diamond Tier Sponsors'
+              width={400}
+              height={100}
+              quality={90}
+              style={{ objectFit: 'contain' }}
+            />
           </div>
-          <img
-            src={`/images/sponsors/sponsorsLevel/${levelImages[1]}`}
-            alt=''
-            className={styles.levelImage}
-            key={`level_2`}
-          ></img>
           <hr />
-          <div className={styles.reachGroup}>
-            {goldSponsors.map((item, idx) => {
-              return (
-                <a href={item.link}>
-                  <img
-                    src={`/images/sponsors/${item.image}`}
-                    alt=''
-                    className={styles.goldImg}
-                    key={`alumni_reach_${idx}`}
-                  ></img>
-                </a>
-              );
-            })}
+          <SponsorTier
+            sponsors={diamondSponsors}
+            className={styles.diamondImg}
+            tier='diamond'
+          />
+
+          {/* Gold Tier */}
+          <div className={styles.levelImage}>
+            <Image
+              src={`/images/sponsors/sponsorsLevel/${levelImages[1]}`}
+              alt='Gold Tier Sponsors'
+              width={400}
+              height={100}
+              quality={90}
+              style={{ objectFit: 'contain' }}
+            />
           </div>
-          <img
-            src={`/images/sponsors/sponsorsLevel/${levelImages[2]}`}
-            alt='Silver Tier'
-            className={styles.levelImage}
-            key={`level_3`}
-          ></img>
           <hr />
-          <div className={styles.reachGroup}>
-            {silverSponsors.map((item, idx) => {
-              return (
-                <a href={item.link}>
-                  <img
-                    src={`/images/sponsors/${item.image}`}
-                    alt=''
-                    className={styles.silverImg}
-                    key={`alumni_reach_${idx}`}
-                  ></img>
-                </a>
-              );
-            })}
+          <SponsorTier
+            sponsors={goldSponsors}
+            className={styles.goldImg}
+            tier='gold'
+          />
+
+          {/* Silver Tier */}
+          <div className={styles.levelImage}>
+            <Image
+              src={`/images/sponsors/sponsorsLevel/${levelImages[2]}`}
+              alt='Silver Tier Sponsors'
+              width={400}
+              height={100}
+              quality={90}
+              style={{ objectFit: 'contain' }}
+            />
           </div>
+          <hr />
+          <SponsorTier
+            sponsors={silverSponsors}
+            className={styles.silverImg}
+            tier='silver'
+          />
         </div>
       </div>
     </>
   );
 };
 
-export default Sponsors;
+export default memo(Sponsors);
